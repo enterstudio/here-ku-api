@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "seed": "babel-node src/db/seed.js",
     "dev": "nodemon src/index.js --exec babel-node",
     "prestart": "babel src -d dist",
     "start": "node dist/index.js"
