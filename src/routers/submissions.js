@@ -1,18 +1,14 @@
 import express from 'express'
 import Submission from '../models/Submission'
+import handleError from '../handleError'
 
 let router = express.Router()
-
-function handleError(err) {
-  console.error(err)
-  res.sendStatus(500)
-}
 
 router.route('/')
   .get((req, res) => {
     Submission.find()
-      .then((submission) => {
-        res.json(submission)
+      .then((submissions) => {
+        res.json(submissions)
       })
       .catch(handleError(err))
   })
@@ -22,7 +18,7 @@ router.route('/')
       .then((submission) => {
         res.sendStatus(200)
       })
-      .catch(handleError(err))
+      .catch(handleError(res, err))
   })
 
 export default router
