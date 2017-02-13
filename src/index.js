@@ -2,12 +2,16 @@ import express from 'express'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import jwtAuth from 'express-jwt'
+import cors from 'cors'
 import authRouter from './routers/auth'
 import submissionsRouter from './routers/submissions'
 
 const apiPrefix = '/api'
 const PORT = process.env.PORT || 3000
 const app = express()
+
+app.use(cors())
+app.options('*', cors())
 
 app.use(bodyParser.urlencoded({
   extended: true

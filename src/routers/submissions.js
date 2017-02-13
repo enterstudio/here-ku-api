@@ -10,7 +10,7 @@ router.route('/')
       .then((submissions) => {
         res.json(submissions)
       })
-      .catch(handleError(err))
+      .catch((err) => handleError(err))
   })
   .post((req, res) => {
     let submission = req.body
@@ -18,7 +18,7 @@ router.route('/')
       .then((submission) => {
         res.sendStatus(200)
       })
-      .catch(handleError(res, err))
+      .catch((err) => handleError(err))
   })
 
 export default router

@@ -48,11 +48,11 @@ submissionSchema.pre('init', (next, doc) => {
   const created_at = doc._created_at.toLocaleTimeString("en-us", dtOptions)
   doc.created_at = created_at
   delete doc._created_at
-  
+
   User.findOne(doc._user, (err, user) => {
     if(err) console.error(err)
     doc.user = {
-      name: user.name
+      username: user.username
     }
     delete doc._user
     next()
