@@ -22,18 +22,41 @@ const submissionSchema = new Schema({
       ref: 'User',
       required: true
     },
-    likes: [{
+    _likes: [{
       type: ObjectId,
       ref: 'Like'
     }]
   }, {
     timestamps: {
-      createdAt: 'created_at'
+      createdAt: '_created_at'
   }
 })
 
 submissionSchema.index({
   location: '2dsphere'
+})
+
+const dtOptions = {
+  month: 'numeric',
+  day: 'numeric',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit'
+}
+
+submissionSchema.pre('init', (next, doc) => {
+  const created_at = doc._created_at.toLocaleTimeString("en-us", dtOptions)
+  doc.created_at = created_at
+  delete doc._created_at
+  
+  User.findOne(doc._user, (err, user) => {
+    if(err) console.error(err)
+    doc.user = {
+      name: user.name
+    }
+    delete doc._user
+    next()
+  })
 })
 
 export default mongoose.model('Submission', submissionSchema)
