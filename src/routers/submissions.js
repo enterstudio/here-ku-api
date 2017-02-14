@@ -53,7 +53,6 @@ router.route('/')
       submission._user = user
       Submission.create(submission)
         .then((submission) => {
-          console.log('submission', submission)
           res.sendStatus(200)
         })
         .catch((err) => console.error(err))
