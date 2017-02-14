@@ -31,7 +31,7 @@ router.route('/')
     //https://docs.mongodb.com/manual/reference/operator/query/centerSphere/#example
     Submission.find({
       location: {
-        $geoWithin: {$centerSphere: [[lon, lat], (process.env.RANGE_FEET/5280)/3963.2] }
+        $geoWithin: {$centerSphere: [[lon, lat], (process.env.RANGE_FEET/5280)/process.env.EQUATORIAL_RADIUS] }
       }})
       .then((submissions) => {
         res.json(submissions)
