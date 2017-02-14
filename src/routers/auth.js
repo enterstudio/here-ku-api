@@ -13,7 +13,7 @@ function jwtSend(req, res, user) {
   jwt.sign(
     {user: user._id},
     process.env.JWT_SECRECT,
-    {expiresIn: '1m'},
+    {expiresIn: '1h'},
     (err, token) => {
       if(err) {
         handleError(res, err)

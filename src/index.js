@@ -1,7 +1,6 @@
 import express from 'express'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
-import jwtAuth from 'express-jwt'
 import cors from 'cors'
 import authRouter from './routers/auth'
 import submissionsRouter from './routers/submissions'
@@ -20,10 +19,8 @@ app.use(bodyParser.json())
 
 app.use(morgan('dev'))
 
-app.get('/', jwtAuth({secret: process.env.JWT_SECRECT}), (req, res) => {
-  console.log(req.user)
-  res.sendStatus(200)
-})
+app.use(`${apiPrefix}/auth`, authRouter)
+app.use(`${apiPrefix}/submissions`, submissionsRouter)
 
 //this must come AFTER routes
 app.use(function (err, req, res, next) {
@@ -31,9 +28,6 @@ app.use(function (err, req, res, next) {
     res.sendStatus(401)
   }
 })
-
-app.use(`${apiPrefix}/auth`, authRouter)
-app.use(`${apiPrefix}/submissions`, submissionsRouter)
 
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}...`)

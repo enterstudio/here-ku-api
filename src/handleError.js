@@ -1,5 +1,5 @@
 function handleError(res, err) {
-  console.error(err)
+  console.error('handleError', err)
   res.sendStatus(500)
 }
 
