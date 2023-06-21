@@ -1110,9 +1110,10 @@ generate-object-property@^1.1.0:
   dependencies:
     is-property "^1.0.0"
 
-generaterr@^1.2.0:
+generaterr@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/generaterr/-/generaterr-1.5.0.tgz#b0ceb6cc5164df2a061338cc340a8615395c52fc"
+  integrity sha512-JgcGRv2yUKeboLvvNrq9Bm90P4iJBu7/vd5wSLYqMG5GJ6SxZT46LAAkMfNhQ+EK3jzC+cRBm7P8aUWYyphgcQ==
 
 getpass@^0.1.1:
   version "0.1.6"
@@ -1718,14 +1719,14 @@ passport-facebook@^2.1.1:
   dependencies:
     passport-oauth2 "1.x.x"
 
-passport-local-mongoose@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/passport-local-mongoose/-/passport-local-mongoose-4.0.0.tgz#10fee927eaf9785bb2e10e2a8c446a0ff1fa0107"
+passport-local-mongoose@^6.0.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/passport-local-mongoose/-/passport-local-mongoose-6.3.0.tgz#866d6c7807636d2cb0519e693b0a3831b11f0e1a"
+  integrity sha512-SL1OJc59tk3h36cqQ7ekGTULvkFvC/YYRrp5dQfSSZDM5Y/dDSg4zRX5TcJqPya1eKVisbUgmusWIAWhJpIFWQ==
   dependencies:
-    generaterr "^1.2.0"
+    generaterr "^1.5.0"
     passport-local "^1.0.0"
-    scmp "^1.0.0"
-    semver "^5.1.0"
+    scmp "^2.1.0"
 
 passport-local@^1.0.0:
   version "1.0.0"
@@ -1964,9 +1965,10 @@ safe-buffer@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
 
-scmp@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/scmp/-/scmp-1.0.2.tgz#bc4e4e2713252b04210cdff9cef3ade2c8fa7370"
+scmp@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/scmp/-/scmp-2.1.0.tgz#37b8e197c425bdeb570ab91cc356b311a11f9c9a"
+  integrity sha512-o/mRQGk9Rcer/jEEw/yw4mwo3EU/NvYvp577/Btqrym9Qy5/MdWGBqipbALgd2lrdWTJ5/gqDusxfnQBxOxT2Q==
 
 semver@^5.1.0, semver@~5.3.0:
   version "5.3.0"
